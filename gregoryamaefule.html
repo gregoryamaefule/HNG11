@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .social-links a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="https://github.com/gregoryamaefule/HNG11/blob/main/profile.jpeg?raw=true" alt="Profile Picture" data-testid="profilePicture">
+        <h2 data-testid="fullName">Gregory Amaefule</h2>
+        <h4 data-testid="jobTitle">Frontend Developer</h4>
+        <p data-testid="shortBio">Passionate about creating beautiful and functional web experiences.</p>
+        <p data-testid="currentLocation">Lagos, Nigeria</p>
+        <p data-testid="emailAddress">amaefulegregory@gmail.com</p>
+        <div class="social-links" data-testid="socialLinks">
+            <a href="https://www.linkedin.com/in/gregory-amaefule-547a7b225/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/gregoryamaefule" target="_blank">GitHub</a>
+            <a href="https://x.com/GregoryAmaefule" target="_blank">Twitter</a>
+        </div>
+        <p data-testid="currentTimeUTC" id="utc-time"></p>
+    </div>
+    <script>
+        function updateTime() {
+            document.getElementById('utc-time').textContent = new Date().toUTCString();
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
